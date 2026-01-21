@@ -1,0 +1,11 @@
+.wholewheat-cakes__decoration {
+    position: absolute;
+    left: -5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12rem;
+    height: auto;
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 0;
+}

@@ -1,0 +1,152 @@
+@use '../index.scss' as *;
+
+.navbar {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; // Logo left, Links center, Actions right
+    align-items: center;
+    padding: 2rem 0rem;
+    background: transparent;
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+
+    &__logo {
+        justify-self: start;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem; // Space between icon and text
+
+        img {
+            height: 50px;
+            width: auto;
+            display: block;
+        }
+
+        .navbar__brand-name {
+            font-family: $font-serif; // Playfair Display
+            font-size: 1.8rem;
+            font-weight: 700; // Bold
+            font-style: italic;
+            color: #4a2c2a; // Brand color
+            letter-spacing: 0.5px;
+        }
+    }
+
+    &__toggle {
+        display: none; // Hidden on desktop
+        background: none;
+        border: none;
+        font-size: 1.8rem;
+        color: #4a2c2a;
+        cursor: pointer;
+        justify-self: end;
+
+        @media (max-width: 768px) {
+            display: block; // Show on mobile
+        }
+    }
+
+    // Wrapper for desktop layout, on mobile becomes the dropdown/drawer
+    &__menu {
+        display: contents; // On desktop, acts as if wrapper doesn't exist to respect grid
+
+        @media (max-width: 768px) {
+            display: none; // Hidden by default on mobile
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            flex-direction: column;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+            text-align: center;
+
+            &.active {
+                display: flex;
+            }
+        }
+    }
+
+    &__links {
+        display: flex;
+        gap: 2.5rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        justify-self: center;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        a {
+            font-family: $font-sans;
+            font-weight: 600;
+            font-size: 1rem; // Readable size
+            color: #5d4037;
+            transition: all 0.3s;
+            position: relative;
+            text-decoration: none;
+
+            &.active {
+                text-decoration: underline;
+                text-underline-offset: 5px;
+                color: #4a2c2a;
+            }
+
+            &:hover {
+                color: #4a2c2a;
+            }
+        }
+    }
+
+    &__actions {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        justify-self: end;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            justify-self: center;
+            width: 100%;
+        }
+
+        .icon-btn {
+            background: none;
+            border: none;
+            font-size: 1.4rem;
+            color: #4a2c2a;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            padding: 0;
+            transition: transform 0.2s;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+
+        .btn-primary {
+            background-color: #4a2c2a; // Dark brown
+            color: white;
+            border: none;
+            padding: 0.7rem 2.5rem; // Larger padding for pill shape
+            border-radius: 50px;
+            font-family: $font-sans;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+
+            &:hover {
+                background-color: lighten(#4a2c2a, 5%);
+            }
+        }
+    }
+}

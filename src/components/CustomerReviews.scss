@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+.customer-reviews {
+    padding: 0 0 4rem 0;
+    overflow: hidden;
+
+    &__marquee {
+        background: #fff;
+        padding: 1.5rem 0;
+        margin-bottom: 4rem;
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+        white-space: nowrap;
+        position: relative;
+        display: flex;
+        overflow: hidden;
+
+        &-content {
+            display: flex;
+            animation: scroll 20s linear infinite;
+
+            span {
+                font-family: var(--font-heading);
+                font-size: 1.5rem;
+                color: #432818;
+                font-style: italic;
+                padding: 0 2rem;
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+
+                .icon {
+                    font-style: normal;
+                }
+            }
+        }
+    }
+
+    &__container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        gap: 4rem;
+        align-items: center;
+        padding: 0 2rem;
+
+        @media (max-width: 900px) {
+            flex-direction: column;
+        }
+    }
+
+    &__image {
+        flex: 1;
+        position: relative;
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            display: block;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    &__content {
+        flex: 1;
+        position: relative;
+
+        &-header {
+            position: relative;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        h2 {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            color: #432818;
+            font-weight: 700;
+            line-height: 1.1;
+
+            em {
+                font-style: italic;
+                font-weight: 400;
+            }
+        }
+
+        .love-icon {
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            color: #8c7373;
+        }
+
+        p {
+            font-family: var(--font-body);
+            color: #6c584c;
+            line-height: 1.6;
+            margin-bottom: 3rem;
+            font-size: 1rem;
+        }
+    }
+
+    &__stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        border-top: 1px solid #eee;
+        padding-top: 2rem;
+
+        &-item {
+            text-align: left;
+
+            h3 {
+                font-family: var(--font-heading);
+                font-size: 1.8rem;
+                color: #432818;
+                font-weight: 700;
+                margin-bottom: 0.5rem;
+            }
+
+            span {
+                font-family: var(--font-body);
+                font-size: 0.875rem;
+                color: #6c584c;
+                display: block;
+            }
+        }
+    }
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+// Ensure the marquee content is duplicated enough to scroll smoothly

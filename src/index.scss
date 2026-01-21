@@ -1,0 +1,45 @@
+// Variables
+$font-serif: 'Playfair Display', serif;
+$font-sans: 'Inter', sans-serif;
+
+$color-primary: #4a2c2a; // Dark brown from text
+$color-secondary: #d4a373; // Gold/Brown accent
+$color-bg: #fff;
+$color-text: #333;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-sans;
+  background-color: $color-bg;
+  color: $color-text;
+  -webkit-font-smoothing: antialiased;
+  // Apply 80% zoom simulation as per user request
+  zoom: 80%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-serif;
+  color: $color-primary;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+// Global container for max width
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
