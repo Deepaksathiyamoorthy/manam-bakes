@@ -1,5 +1,5 @@
-import React from 'react';
 import { ArrowRight, Search } from 'lucide-react';
+import { WHATSAPP_LINK } from '../constants/links';
 import './StartingPage.scss';
 import peanutBrownies from '../assets/org/Peanut-Butter-Brownies-1-of-1 1.png';
 import chocolateCake from '../assets/front-view-delicious-chocolate-cake-with-almonds 1.png';
@@ -17,7 +17,7 @@ const StartingPage: React.FC<StartingPageProps> = ({ onEnterBakes, onEnterOrgani
                 <div className="nav-logo">Manam</div>
                 <div className="nav-actions">
                     <button className="search-btn"><Search size={20} /></button>
-                    <button className="order-btn">Order Now</button>
+                    <button className="order-btn" onClick={() => window.open(WHATSAPP_LINK, '_blank')}>Order Now</button>
                 </div>
             </nav>
 

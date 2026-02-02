@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import './GallerySection.scss';
 import galleryImg from '../../assets/frame-1168.jpeg';
+import { WHATSAPP_LINK } from '../constants/links';
 
 const GallerySection: React.FC = () => {
     return (
@@ -43,7 +44,7 @@ const GallerySection: React.FC = () => {
                         Artisanal cakes, breads, and pastries crafted fresh every day.
                         Artisanal cakes, breads,
                     </p>
-                    <button className="gallery__cta">Order Similar</button>
+                    <button className="gallery__cta" onClick={() => window.open(WHATSAPP_LINK, '_blank')}>Order Similar</button>
                 </div>
             </div>
 

@@ -2,6 +2,7 @@ import React, { useState, type ReactNode } from 'react';
 import logo from '../assets/assetss/manam bakes logo 1.png';
 import { FiSearch, FiHeart, FiMenu, FiX } from 'react-icons/fi';
 import SearchModal from './SearchModal';
+import { WHATSAPP_LINK } from '../constants/links';
 import './Navbar.scss';
 
 export interface NavbarLink {
@@ -43,6 +44,10 @@ const Navbar: React.FC<NavbarProps> = ({
     if (linkOnClick) linkOnClick();
   };
 
+  const handleOrderClick = () => {
+    window.open(WHATSAPP_LINK, '_blank');
+  };
+
   const defaultLinks: NavbarLink[] = [
     { label: 'Home', href: '#home' },
     { label: 'Our Cake', href: '#our-cake' },
@@ -74,7 +79,7 @@ const Navbar: React.FC<NavbarProps> = ({
             <FiSearch />
           </button>
 
-          <button className="navbar__cta-mobile btn-primary">Order Now</button>
+          <button className="navbar__cta-mobile btn-primary" onClick={handleOrderClick}>Order Now</button>
 
           <button className="navbar__toggle" onClick={toggleMenu} aria-label="Toggle navigation">
             {isMenuOpen ? <FiX /> : <FiMenu />}
@@ -105,7 +110,7 @@ const Navbar: React.FC<NavbarProps> = ({
             <div className="navbar__actions">
               <button className="icon-btn" onClick={() => setIsSearchOpen(true)}><FiSearch /></button>
               <button className="icon-btn"><FiHeart /></button>
-              <button className="btn-primary">Order Now</button>
+              <button className="btn-primary" onClick={handleOrderClick}>Order Now</button>
             </div>
           </div>
         </nav>
