@@ -37,7 +37,7 @@ const WholesomeBakes: React.FC<WholesomeBakesProps> = () => {
         {
             id: 1,
             title: 'Raagi Brownie',
-            description: 'Lorem ipsum Lorem ipsum Lorem ipsum',
+            description: '',
             tags: [
                 { text: 'RAAGI', type: 'pink' },
                 { text: 'JAGGERY', type: 'sage' }
@@ -47,7 +47,7 @@ const WholesomeBakes: React.FC<WholesomeBakesProps> = () => {
         {
             id: 2,
             title: 'Wholewheat Brownie',
-            description: 'Lorem ipsum Lorem ipsum Lorem ipsum',
+            description: '',
             tags: [
                 { text: 'WHOLEWHEAT', type: 'pink' },
                 { text: 'DARK CHOCO', type: 'blue' }
@@ -57,7 +57,7 @@ const WholesomeBakes: React.FC<WholesomeBakesProps> = () => {
         {
             id: 3,
             title: 'Kambu Brownie',
-            description: 'Lorem ipsum Lorem ipsum Lorem ipsum',
+            description: '',
             tags: [
                 { text: 'PEARL MILLET', type: 'pink' }
             ],
@@ -66,7 +66,7 @@ const WholesomeBakes: React.FC<WholesomeBakesProps> = () => {
         {
             id: 4,
             title: 'Peanut Butter Brownie',
-            description: 'Lorem ipsum Lorem ipsum Lorem ipsum',
+            description: '',
             tags: [
                 { text: 'PROTIEN RICH', type: 'pink' }
             ],
@@ -96,7 +96,7 @@ const WholesomeBakes: React.FC<WholesomeBakesProps> = () => {
         {
             id: 7,
             title: 'Kambu Brownie',
-            description: 'Lorem ipsum Lorem ipsum Lorem ipsum',
+            description: '',
             tags: [
                 { text: 'PEARL MILLET', type: 'pink' }
             ],
@@ -105,7 +105,7 @@ const WholesomeBakes: React.FC<WholesomeBakesProps> = () => {
         {
             id: 8,
             title: 'Peanut Butter Brownie',
-            description: 'Lorem ipsum Lorem ipsum Lorem ipsum',
+            description: '',
             tags: [
                 { text: 'PROTIEN RICH', type: 'pink' }
             ],
@@ -183,7 +183,7 @@ const WholesomeBakes: React.FC<WholesomeBakesProps> = () => {
         {
             id: 16,
             title: 'Peanut Butter Brownie',
-            description: 'Lorem ipsum Lorem ipsum Lorem ipsum',
+            description: '',
             tags: [
                 { text: 'PROTIEN RICH', type: 'pink' }
             ],

@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import './GallerySection.scss';
 import galleryImg from '../../assets/frame-1168.jpeg';
-import decorationSvg from '../assets/Group.svg';
 
 const GallerySection: React.FC = () => {
     return (
@@ -45,7 +44,6 @@ const GallerySection: React.FC = () => {
                         Artisanal cakes, breads,
                     </p>
                     <button className="gallery__cta">Order Similar</button>
-                    <img src={decorationSvg} alt="" className="gallery__decoration" />
                 </div>
             </div>
 

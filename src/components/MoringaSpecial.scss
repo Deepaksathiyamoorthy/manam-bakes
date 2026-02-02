@@ -1,0 +1,186 @@
+.moringa-special {
+    padding: 8rem 0;
+    background-color: #ffffff;
+    color: #333;
+    position: relative;
+    overflow: hidden;
+
+    .decorative-heart {
+        position: absolute;
+        left: -80px;
+        top: 25%;
+        width: 300px;
+        opacity: 0.2;
+        pointer-events: none;
+        transform: rotate(-15deg);
+
+        @media (max-width: 1200px) {
+            width: 200px;
+            left: -40px;
+        }
+
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 5rem;
+        position: relative;
+        z-index: 1;
+
+        .title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-style: italic;
+            color: #4a2c2a;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            font-weight: 400;
+        }
+    }
+
+    .products-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        position: relative;
+        z-index: 1;
+
+        @media (max-width: 1024px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 640px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .product-card {
+        height: 100%;
+
+        .image-wrapper {
+            background-color: transparent;
+            border-radius: 20px;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            padding: 0;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                transition: transform 0.5s ease;
+            }
+        }
+
+        &:hover img {
+            transform: scale(1.05);
+        }
+
+        .card-content {
+            .card-title {
+                font-family: 'Playfair Display', serif;
+                font-size: 1.5rem;
+                color: #4a2c2a;
+                margin-bottom: 0.5rem;
+                font-weight: 600;
+            }
+
+            .card-desc {
+                font-size: 0.95rem;
+                color: #666;
+                line-height: 1.5;
+                margin-bottom: 1rem;
+            }
+
+            .card-tags {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+
+                .tag {
+                    padding: 0.4rem 1rem;
+                    border-radius: 50px;
+                    font-size: 0.75rem;
+                    font-weight: 700;
+                    letter-spacing: 0.05em;
+                    text-transform: uppercase;
+                    background-color: #fceceb;
+                    color: #4a2c2a;
+                }
+            }
+        }
+    }
+
+    .display-card {
+        background-color: transparent;
+        border-radius: 20px;
+        padding: 0;
+        overflow: hidden;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .image-container {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            border-radius: 20px;
+            margin-bottom: 1.5rem;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.5s ease;
+            }
+        }
+
+        &:hover img {
+            transform: scale(1.05);
+        }
+
+        .display-info {
+            h3 {
+                font-family: 'Playfair Display', serif;
+                font-size: 1.5rem;
+                color: #4a2c2a;
+                margin-bottom: 0.5rem;
+                font-weight: 600;
+            }
+
+            p {
+                font-size: 0.95rem;
+                color: #666;
+                margin-bottom: 1rem;
+                line-height: 1.5;
+            }
+
+            .tags {
+                display: flex;
+                gap: 0.5rem;
+
+                .tag {
+                    padding: 0.4rem 1rem;
+                    border-radius: 50px;
+                    font-size: 0.75rem;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    background-color: #fceceb;
+                    color: #4a2c2a;
+                }
+            }
+        }
+    }
+}

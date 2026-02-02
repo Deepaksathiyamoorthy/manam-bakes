@@ -4,7 +4,6 @@ import './Hero.scss';
 import heroImage from '../assets/hero-girl.png';
 import illustrationLeft from '../assets/illustration-left.svg';
 import illustrationRight from '../assets/illustration-right.svg';
-import badgeImage from '../assets/assetss/ChatGPT Image Jan 20, 2026, 07_06_49 PM.png';
 
 const Hero: React.FC = () => {
     const { scrollY } = useScroll();
@@ -52,14 +51,6 @@ const Hero: React.FC = () => {
                             Sweetest
                         </motion.h2>
 
-                        <motion.div
-                            className="badge"
-                            initial={{ opacity: 0, scale: 0 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.6, delay: 0.8, type: "spring" }}
-                        >
-                            <img src={badgeImage} alt="Made with love" />
-                        </motion.div>
                     </div>
 
                     <div className="hero__center">

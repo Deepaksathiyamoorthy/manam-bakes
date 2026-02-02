@@ -1,0 +1,178 @@
+.health-mixes {
+    padding: 8rem 0;
+    background-color: #ffffff;
+    color: #333;
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 5rem;
+
+        .title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-style: italic;
+            color: #4a2c2a;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            font-weight: 400;
+        }
+    }
+
+    .products-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2.5rem 2rem;
+
+        .grid-item {
+            width: 100%;
+        }
+    }
+
+    .product-card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        .image-wrapper {
+            background-color: transparent; // Remove grey background to match SVG/transparent backgrounds
+            border-radius: 20px;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            padding: 0; // Remove padding to let images grow to container edges
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain; // Maintain aspect ratio for pouches
+                transition: transform 0.5s ease;
+            }
+        }
+
+        &:hover .image-wrapper img {
+            transform: scale(1.08);
+        }
+
+        .card-content {
+            .card-title {
+                font-family: 'Inter', sans-serif;
+                font-size: 1.1rem;
+                font-weight: 600;
+                margin-bottom: 0.5rem;
+                color: #333;
+            }
+
+            .card-desc {
+                font-size: 0.9rem;
+                color: #666;
+                line-height: 1.4;
+                margin-bottom: 1.2rem;
+            }
+
+            .card-tags {
+                display: flex;
+                gap: 0.8rem;
+
+                .tag {
+                    background-color: #fceceb; // Soft pink/beige
+                    color: #4a2c2a;
+                    padding: 0.3rem 0.8rem;
+                    border-radius: 15px;
+                    font-size: 0.75rem;
+                    font-weight: 600;
+                    letter-spacing: 0.05em;
+
+                    &:nth-child(2) {
+                        background-color: #e8ede4; // Soft sage
+                    }
+                }
+            }
+        }
+    }
+
+    .cake-display-card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        img {
+            width: 100%;
+            aspect-ratio: 1 / 1.1;
+            object-fit: cover; // Keep cover for premium cake display
+            border-radius: 20px;
+            margin-bottom: 1.5rem;
+            transition: transform 0.5s ease;
+        }
+
+        &:hover img {
+            transform: scale(1.05);
+        }
+
+        .cake-info {
+            h3 {
+                font-size: 1.1rem;
+                font-weight: 600;
+                margin-bottom: 0.5rem;
+                color: #333;
+            }
+
+            p {
+                font-size: 0.9rem;
+                color: #666;
+                margin-bottom: 1.2rem;
+            }
+
+            .tags {
+                .tag {
+                    background-color: #f7e9da;
+                    color: #4a2c2a;
+                    padding: 0.3rem 0.8rem;
+                    border-radius: 15px;
+                    font-size: 0.75rem;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1100px) {
+    .health-mixes {
+        .products-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .health-mixes {
+        padding: 5rem 0;
+
+        .section-header {
+            .title {
+                font-size: 2.5rem;
+            }
+        }
+
+        .products-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem 1rem;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .health-mixes {
+        .products-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+}

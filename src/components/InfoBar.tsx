@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import './InfoBar.scss';
-import chocolateDecoration from '../assets/chocolate-stack.png';
 import avatar1 from '../assets/user-1.png';
 import avatar2 from '../assets/user-2.png';
 import avatar3 from '../assets/user-3.png';
@@ -24,7 +23,6 @@ const InfoBar: React.FC = () => {
                     Artisanal cakes, breads, and pastries crafted fresh every day. Artisanal cakes, breads, and pastries crafted fresh every day. Artisanal cakes, breads,
                 </p>
             </div>
-            <img src={chocolateDecoration} alt="Chocolate decoration" className="infobar__decoration" />
 
             <div className="infobar__section infobar__section--right">
                 <div className="infobar__customers-stack">

@@ -1,0 +1,182 @@
+.organics-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    overflow-y: auto; // Allow internal scrolling if content exceeds height
+    overflow-x: hidden;
+
+    // .organics-nav styles replaced by .navbar with .organics-nav class
+    .organics-nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        // padding: 1.5rem 4rem; // Removed padding from wrapper to let inner .container handle alignment
+        z-index: 1000;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
+        backdrop-filter: blur(5px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        margin: 0; // Reset Navbar margin
+        // max-width: none; // Default block width is 100% which is what we want for wrapper
+    }
+
+    .hero {
+        position: relative;
+        height: 100%; // Filling the fixed .organics-page container
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0 2rem;
+        overflow: hidden;
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: transform 10s ease-out;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 900px;
+            margin-top: 5rem;
+
+            .hero-title {
+                font-family: 'Playfair Display', serif;
+                font-size: 5.5rem;
+                font-weight: 500;
+                font-style: italic;
+                margin-bottom: 1.5rem;
+                color: #fff;
+                line-height: 1.1;
+            }
+
+            .hero-subtitle {
+                font-size: 1.25rem;
+                line-height: 1.6;
+                max-width: 650px;
+                margin: 0 auto 3rem;
+                opacity: 0.9;
+                font-weight: 400;
+            }
+
+            .explore-btn {
+                background: #fff;
+                color: #000;
+                border: none;
+                padding: 1rem 2.5rem;
+                border-radius: 50px;
+                font-size: 1.1rem;
+                font-weight: 600;
+                display: inline-flex;
+                align-items: center;
+                gap: 0.8rem;
+                cursor: pointer;
+                transition: transform 0.3s, background 0.3s;
+                margin-bottom: 5rem;
+
+                &:hover {
+                    transform: scale(1.05);
+                    background: #f8f8f8;
+                }
+            }
+
+            .feature-tags {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 2.5rem;
+
+                .tag {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.8rem;
+                    font-size: 1.1rem;
+                    font-weight: 500;
+                    opacity: 0.9;
+
+                    .tag-icon {
+                        opacity: 0.7;
+                    }
+                }
+
+                .divider {
+                    width: 1px;
+                    height: 24px;
+                    background: rgba(255, 255, 255, 0.3);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .organics-page {
+        .organics-nav {
+            padding: 1.5rem 2rem;
+
+            .nav-links {
+                gap: 1.5rem;
+            }
+        }
+
+        .hero {
+            .hero-title {
+                font-size: 4rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .organics-page {
+        .organics-nav {
+            grid-template-columns: 1fr auto;
+
+            .nav-center {
+                display: none; // Hide links on mobile
+            }
+        }
+
+        .hero {
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .feature-tags {
+                flex-direction: column;
+                gap: 1.5rem;
+
+                .divider {
+                    display: none;
+                }
+            }
+        }
+    }
+}

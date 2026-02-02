@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import InfoBar from './components/InfoBar';
@@ -8,9 +8,40 @@ import GallerySection from './components/GallerySection';
 import AboutFounder from './components/AboutFounder';
 import CustomerReviews from './components/CustomerReviews';
 import Footer from './components/Footer';
+import StartingPage from './components/StartingPage';
+import OrganicsPage from './components/OrganicsPage';
 
 function App() {
+  const [view, setView] = useState<'starting' | 'main' | 'organics'>('starting');
   const [showAllCakes, setShowAllCakes] = useState(false);
+
+  useEffect(() => {
+    // Scroll to top when switching views
+    window.scrollTo(0, 0);
+
+    if (view === 'starting' || view === 'organics') {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
+
+    return () => document.body.classList.remove('no-scroll');
+  }, [view]);
+
+  if (view === 'starting') {
+    return (
+      <StartingPage
+        onEnterBakes={() => setView('main')}
+        onEnterOrganics={() => setView('organics')}
+      />
+    );
+  }
+
+  if (view === 'organics') {
+    return (
+      <OrganicsPage onBack={() => setView('starting')} />
+    );
+  }
 
   return (
     <>

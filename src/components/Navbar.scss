@@ -1,30 +1,112 @@
 @use '../index.scss' as *;
 
+.navbar-wrapper {
+    width: 100%;
+    // Position context if needed, but usually layout handles it.
+}
+
 .navbar {
     display: grid;
     grid-template-columns: 1fr auto 1fr; // Logo left, Links center, Actions right
     align-items: center;
-    padding: 2rem 0rem;
+
+    @media (max-width: 768px) {
+        display: flex; // Use flex for easier absolute positioning handling
+        justify-content: space-between;
+        position: relative; // For absolute centering of toggle
+        padding-right: 1rem; // Ensure space on right
+    }
+
+    padding-top: 1.5rem; // Reduced for Manam Bakes
+    padding-bottom: 1.5rem;
+    // Don't override left/right padding from .container
     background: transparent;
     max-width: 1440px;
     margin: 0 auto;
     width: 100%;
+    position: relative; // Ensure menu positioning context
+
+    &--light {
+        padding-top: 2.5rem; // Keep larger for Organics
+        padding-bottom: 2.5rem;
+
+        .navbar__brand-name {
+            color: #fff !important;
+            font-size: 2.2rem !important; // Keep larger for Organics
+        }
+
+        .navbar__logo img {
+            height: 65px !important; // Keep larger for Organics
+        }
+
+        .navbar__toggle {
+            color: #fff !important;
+        }
+
+        .navbar__links a {
+            color: rgba(255, 255, 255, 0.8) !important;
+            font-size: 1.1rem; // Slight increase for links too
+
+            &.active,
+            &:hover {
+                color: #fff !important;
+
+                &::after {
+                    background: #fff;
+                }
+            }
+        }
+
+        .icon-btn {
+            color: #fff !important;
+            font-size: 1.6rem; // Increase icon size
+        }
+
+        .btn-primary {
+            background-color: #fff !important;
+            color: #000 !important;
+
+            &:hover {
+                background-color: #f0f0f0 !important;
+            }
+        }
+
+        // Mobile Menu Overrides for Light Theme
+        @media (max-width: 768px) {
+            .navbar__links a {
+                color: #5d4037 !important; // Reset to dark for white mobile menu
+            }
+
+            .icon-btn {
+                color: #5d4037 !important;
+            }
+
+            .btn-primary {
+                background-color: #4a2c2a !important;
+                color: #fff !important;
+            }
+        }
+    }
 
     &__logo {
         justify-self: start;
         display: flex;
         align-items: center;
-        gap: 0.5rem; // Space between icon and text
+        gap: 0.8rem; // Increased gap
 
         img {
-            height: 50px;
+            height: 50px; // Larger logo
             width: auto;
-            display: block;
+            margin-right: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            flex-grow: 1; // Push other items to right
         }
 
         .navbar__brand-name {
             font-family: $font-serif; // Playfair Display
-            font-size: 1.8rem;
+            font-size: 1.6rem; // Reduced for Manam Bakes
             font-weight: 700; // Bold
             font-style: italic;
             color: #4a2c2a; // Brand color
@@ -40,6 +122,44 @@
         color: #4a2c2a;
         cursor: pointer;
         justify-self: end;
+
+        @media (max-width: 768px) {
+            display: block; // Show on mobile
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 5; // Ensure above others
+        }
+    }
+
+    &__search-mobile {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: #4a2c2a;
+        cursor: pointer;
+        margin-right: 0.8rem;
+
+        @media (max-width: 768px) {
+            display: block;
+        }
+    }
+
+    &__cta-mobile {
+        display: none; // Hidden on desktop
+        margin-right: 0; // Reset margin for right alignment
+        // Specific styling to match reference image
+        background-color: #4a2c2a !important; // Ensure dark brown
+        color: #fff !important;
+        border: none;
+        padding: 0.6rem 1.2rem !important; // Balanced padding
+        border-radius: 50px !important;
+        font-family: 'Inter', sans-serif !important;
+        font-weight: 700 !important; // Bold text like image
+        font-size: 0.85rem !important;
+        cursor: pointer;
+        line-height: 1;
 
         @media (max-width: 768px) {
             display: block; // Show on mobile
@@ -86,7 +206,7 @@
         a {
             font-family: $font-sans;
             font-weight: 600;
-            font-size: 1rem; // Readable size
+            font-size: 1.1rem; // Readable size
             color: #5d4037;
             transition: all 0.3s;
             position: relative;
@@ -119,7 +239,7 @@
         .icon-btn {
             background: none;
             border: none;
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             color: #4a2c2a;
             cursor: pointer;
             display: flex;

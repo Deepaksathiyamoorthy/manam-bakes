@@ -21,8 +21,8 @@ $color-secondary: #d4a373;
     pointer-events: none;
 
     @media (max-width: 900px) {
-        width: 150px;
-        top: 5%;
+        width: 100px;
+        top: 0;
     }
 }
 
@@ -43,7 +43,8 @@ $color-secondary: #d4a373;
         @media (max-width: 900px) {
             flex-direction: column;
             text-align: center;
-            gap: 3rem;
+            gap: 1.5rem; // Reduced gap for tighter mobile layout
+            padding-top: 1rem; // Add padding to container top
         }
     }
 
@@ -70,7 +71,7 @@ $color-secondary: #d4a373;
             align-items: center;
             text-align: center;
             margin-right: 0;
-            padding-top: 2rem;
+            padding-top: 0; // Removed extra padding
         }
 
         .gift-icon-top-left {
@@ -82,9 +83,9 @@ $color-secondary: #d4a373;
             transform: rotate(-15deg);
 
             @media (max-width: 900px) {
-                top: 0;
-                right: 10%;
-                width: 100px; // Smaller on mobile
+                top: -60px;
+                right: 5%;
+                width: 80px; // Smaller on mobile
             }
         }
 
@@ -153,7 +154,7 @@ $color-secondary: #d4a373;
             padding-left: 0;
             text-align: center;
             margin-left: 0;
-            padding-top: 2rem;
+            padding-top: 0; // Removed extra padding
         }
 
         .title-with-icon {
@@ -213,6 +214,7 @@ $color-secondary: #d4a373;
             color: #5d4037;
             font-family: $font-sans;
         }
+
     }
 
     &__center {
@@ -223,6 +225,12 @@ $color-secondary: #d4a373;
         position: relative;
         z-index: 1;
         margin-top: 20px;
+
+        @media (max-width: 900px) {
+            margin-top: 0; // Reset margin
+            align-items: center; // Center vertically in container
+            width: 100%; // Ensure container takes full width for centering
+        }
 
         .image-wrapper {
             position: relative;
@@ -235,7 +243,9 @@ $color-secondary: #d4a373;
                 display: block;
 
                 @media (max-width: 900px) {
-                    width: 300px; // Smaller image on mobile
+                    width: 85%; // Responsive width
+                    max-width: 350px; // Cap size
+                    min-width: 280px; // Prevents being too small
                 }
             }
         }
